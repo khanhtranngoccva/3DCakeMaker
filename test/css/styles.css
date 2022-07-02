@@ -181,7 +181,7 @@
     position: relative;
     color: transparent;
     display: inline-block;
-    background:  linear-gradient(
+    --candleColor: linear-gradient(
             rgba(255, 0, 0, 1) 10%,
             rgba(255, 154, 0, 1) 20%,
             rgba(208, 222, 33, 1) 30%,
@@ -192,19 +192,19 @@
             rgba(95, 21, 242, 1) 80%,
             rgba(186, 12, 248, 1) 90%
     );
-    -webkit-background-clip: text;
 }
 
 .candleText .frontCandleChar {
-    background: inherit;
+    background: linear-gradient(#fff4, #fff4), var(--candleColor);
+    -webkit-background-clip: text;
 }
 
 .candleText .sideCandleChar {
     position: absolute;
     top: 0;
     color: transparent;
-    background: inherit;
-    filter: brightness(0.8);
+    background: linear-gradient(#0004, #0004), var(--candleColor);
+    -webkit-background-clip: text;
 }
 
 .fire {
@@ -257,135 +257,3 @@
     transform: translateY(-5px);
 }
 
-.flakeTopping {
-    transform: translateY(-64px);
-}
-
-.cakeFlake {
-    --length: 20px;
-    --width: 5px;
-    --height: 2px;
-    --darken: #00000022;
-    --extraDarken: #00000044;
-    --primaryColor: #ff4444;
-    --topBackground: var(--primaryColor);
-    --bottomBackground: var(--primaryColor);
-    --leftBackground: linear-gradient(var(--extraDarken), var(--extraDarken)), var(--primaryColor);
-    --rightBackground: linear-gradient(var(--extraDarken), var(--extraDarken)), var(--primaryColor);
-    --frontBackground: linear-gradient(var(--darken), var(--darken)), var(--primaryColor);
-    --backBackground: linear-gradient(var(--darken), var(--darken)), var(--primaryColor);
-}
-
-.redFlake {
-    --primaryColor: #ff4444;
-}
-
-.blueFlake {
-    --primaryColor: #1fa1ff;
-}
-
-.greenFlake {
-    --primaryColor: #0fdc00;
-}
-
-.goldFlake {
-    --primaryColor: #eeae37;
-}
-
-.cakeFlake:nth-of-type(1) {
-    transform: translate3d(100px, 0, 10px) rotateY(50deg);
-}
-
-.cakeFlake:nth-of-type(2) {
-    transform: translate3d(30px, 0, -80px) rotateY(-30deg);
-}
-
-.cakeFlake:nth-of-type(3) {
-    transform: translate3d(-90px, 0, 10px) rotateY(-70deg);
-}
-
-.cakeFlake:nth-of-type(4) {
-    transform: translate3d(80px, 0, -130px) rotateY(-80deg);
-}
-
-.cakeFlake:nth-of-type(5) {
-    transform: translate3d(-100px, 0, -100px) rotateY(40deg);
-}
-
-
-.cakeFlake:nth-of-type(6) {
-    transform: translate3d(-50px, 0, -50px) rotateY(70deg);
-}
-
-.cakeFlake:nth-of-type(7) {
-    transform: translate3d(140px, 0, -40px) rotateY(-42deg);
-}
-
-.cakeFlake:nth-of-type(8) {
-    transform: translate3d(-150px, 0, -30px) rotateY(-73deg);
-}
-
-.cakeFlake:nth-of-type(9) {
-    transform: translate3d(0px, 0, -130px) rotateY(-50deg);
-}
-
-.cakeFlake:nth-of-type(10) {
-    transform: translate3d(-40px, 0, 40px) rotateY(-30deg);
-}
-
-
-.cakeFlake:nth-of-type(11) {
-    transform: translate3d(-30px, 0, 140px) rotateY(30deg);
-}
-
-.cakeFlake:nth-of-type(12) {
-    transform: translate3d(-150px, 0, 40px) rotateY(-42deg);
-}
-
-.cakeFlake:nth-of-type(13) {
-    transform: translate3d(150px, 0, 30px) rotateY(-33deg);
-}
-
-.cakeFlake:nth-of-type(14) {
-    transform: translate3d(0px, 0, 0px) rotateY(-20deg);
-}
-
-.cakeFlake:nth-of-type(15) {
-    transform: translate3d(40px, 0, 50px) rotateY(30deg);
-}
-
-.cakeFlake:nth-of-type(16) {
-    transform: translate3d(40px, 0, 150px) rotateY(-50deg);
-}
-
-.cakeFlake:nth-of-type(17) {
-    transform: translate3d(120px, 0, 90px) rotateY(42deg);
-}
-
-.cakeFlake:nth-of-type(18) {
-    transform: translate3d(50px, 0, -30px) rotateY(37deg);
-}
-
-.cakeFlake:nth-of-type(19) {
-    transform: translate3d(120px, 0, -100px) rotateY(20deg);
-}
-
-.cakeFlake:nth-of-type(20) {
-    transform: translate3d(-50px, 0, -160px) rotateY(30deg);
-}
-
-.cakeFlake:nth-of-type(21) {
-    transform: translate3d(0px, 0, 170px) rotateY(-5deg);
-}
-
-.cakeFlake:nth-of-type(22) {
-    transform: translate3d(90px, 0, 130px) rotateY(-30deg);
-}
-
-.cakeFlake:nth-of-type(23) {
-    transform: translate3d(-70px, 0, 160px) rotateY(-20deg);
-}
-
-.cakeFlake:nth-of-type(24) {
-    transform: translate3d(-90px, 0, 130px) rotateY(30deg);
-}

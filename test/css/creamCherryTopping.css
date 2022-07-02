@@ -1,0 +1,68 @@
+.creamCherryTopping {
+    transform: translateY(-65px);
+}
+
+.creamBase {
+    --darken: #00000022;
+    --extraDarken: #00000044;
+    --primaryColor: #ffffff;
+    --topBackground: var(--primaryColor);
+    --bottomBackground: var(--primaryColor);
+    --leftBackground: linear-gradient(var(--extraDarken), var(--extraDarken)), var(--primaryColor);
+    --rightBackground: linear-gradient(var(--extraDarken), var(--extraDarken)), var(--primaryColor);
+    --frontBackground: linear-gradient(var(--darken), var(--darken)), var(--primaryColor);
+    --backBackground: linear-gradient(var(--darken), var(--darken)), var(--primaryColor);
+}
+
+.creamBase1 {
+    --width: 50px;
+    --length: 40px;
+    --height: 10px;
+}
+
+.creamBase2 {
+    --width: 40px;
+    --length: 50px;
+    --height: 10px;
+}
+
+.creamBase3 {
+    --width: 40px;
+    --length: 40px;
+    --height: 10px;
+    transform: translateY(-10px);
+}
+
+
+.cherry {
+    transform: translateY(-14px);
+    --primaryColor: #d90000;
+    --darken: #00000022;
+    --extraDarken: #00000044;
+    --topBackground: var(--primaryColor);
+    --bottomBackground: var(--primaryColor);
+    --leftBackground: linear-gradient(var(--extraDarken), var(--extraDarken)), var(--primaryColor);
+    --rightBackground: linear-gradient(var(--extraDarken), var(--extraDarken)), var(--primaryColor);
+    --frontBackground: linear-gradient(var(--darken), var(--darken)), var(--primaryColor);
+    --backBackground: linear-gradient(var(--darken), var(--darken)), var(--primaryColor);
+    --bigDimension: 25px;
+    --smallDimension: 20px;
+}
+
+.cherryBox1 {
+    --width: var(--bigDimension);
+    --height: var(--smallDimension);
+    --length: var(--smallDimension);
+}
+
+.cherryBox2 {
+    --width: var(--smallDimension);
+    --height: var(--bigDimension);
+    --length: var(--smallDimension);
+}
+
+.cherryBox3 {
+    --width: var(--smallDimension);
+    --height: var(--smallDimension);
+    --length: var(--bigDimension);
+}
