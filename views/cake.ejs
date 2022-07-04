@@ -5,16 +5,17 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/DimensionCSS.css">
+    <link rel="stylesheet" href="/static/css/DimensionCSS.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/candle.css">
-    <link rel="stylesheet" href="css/flakeTopping.css">
-    <link rel="stylesheet" href="css/creamCherryTopping.css">
-    <link rel="stylesheet" href="css/berryTopping.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="/static/css/candle.css">
+    <link rel="stylesheet" href="/static/css/flakeTopping.css">
+    <link rel="stylesheet" href="/static/css/creamCherryTopping.css">
+    <link rel="stylesheet" href="/static/css/berryTopping.css">
+    <link rel="stylesheet" href="/static/css/cakeForm.css">
     <title>Happy Birthday!</title>
 </head>
 <body>
@@ -276,10 +277,85 @@
                     </div>
                 </div>
             </div>
-            <div class="candleText" text="20"></div>
+            <div class="candleText" text="64"></div>
         </div>
     </div>
 </div>
+<form class="createCakeForm">
+    <% for (let cakePropertyName of Object.keys(cakeData)) { %>
+        <% let cakeProperty = cakeData[cakePropertyName]; %>
+        <% if (cakeProperty.inputType === "choice") { %>
+            <label>
+                <span><%= cakeProperty.inputDescription %></span>
+                <select name=<%= cakePropertyName %>>
+                    <% for (let validChoice of cakeProperty.validChoices) { %>
+                        <option value=<%= validChoice.value %>>
+                            <%= validChoice.description %>
+                        </option>
+                    <% } %>
+                </select>
+            </label>
+        <% } else { %>
+            <label>
+                <span><%= cakeProperty.inputDescription %></span>
+                <input name=<%= cakePropertyName %> type=<%= cakeProperty.inputType %>
+                       value=<%= cakeProperty.default %>>
+            </label>
+        <% } %>
+    <% } %>
+    <input class="finalizeCreateCakeButton" type="submit" value="Create!">
+</form>
+<form class="editCakeForm" novalidate>
+    <% for (let cakePropertyName of Object.keys(cakeData)) { %>
+        <% let cakeProperty = cakeData[cakePropertyName]; %>
+        <% if (cakeProperty.inputType === "choice") { %>
+            <label>
+                <span><%= cakeProperty.inputDescription %></span>
+                <select name=<%= cakePropertyName %>>
+                    <% for (let validChoice of cakeProperty.validChoices) { %>
+                        <option value=<%= validChoice.value %>>
+                            <%= validChoice.description %>
+                        </option>
+                    <% } %>
+                </select>
+            </label>
+        <% } else { %>
+            <label>
+                <span><%= cakeProperty.inputDescription %></span>
+                <input name=<%= cakePropertyName %> type=<%= cakeProperty.inputType %>
+                       value=<%= cakeProperty.default %>>
+                <% if (cakeProperty.allowRainbow) { %>
+                    <button class="makeThisRainbow"></button>
+                <% } %>
+            </label>
+        <% } %>
+    <% } %>
+    <input class="finalizeEditCakeButton" type="submit" value="Update!">
+    <button class="finalizeEditCakeButton delete">Delete!</button>
+</form>
+<form class="getCakeForm">
+    <label for="getCakeID">
+        What's your cake ID?
+    </label>
+    <fieldset class="getCakeInput">
+        <input type="text" id="getCakeID" placeholder="A code of 24 letters and digits." required
+               pattern="[a-zA-Z0-9]{24}">
+        <input type="submit" value="Go!">
+    </fieldset>
+    <span class="message"></span>
+</form>
+<section class="cakeIDOverlay">
+    <div class="cakeIDOverlayWindow">
+        <h3>Your cake is finished! Here's the ID:</h3>
+        <span class="newCakeID" id="cakeID"></span>
+    </div>
+</section>
 </body>
-<script src="build/build.js"></script>
+<code id="directCakeID" hidden>
+    <% try { %>
+        <%= cakeID %>
+    <% } catch (e) { %>
+    <% } %>
+</code>
+<script src=<%= scriptLocation %>></script>
 </html>

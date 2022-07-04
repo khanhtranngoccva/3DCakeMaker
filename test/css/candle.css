@@ -1,0 +1,105 @@
+.candleText {
+    position: absolute;
+    text-transform: uppercase;
+    font-size: 180px;
+    font-family: VT323, monospace;
+    margin: 0;
+    --additionalTransform: translateY(calc(-0.7em - 55px));
+    --additionalTransform2: translateZ(10px);
+    transform: var(--additionalTransform2) var(--additionalTransform) translateX(calc(-50%)) scaleX(1.2);
+    text-align: center;
+    line-height: 0.7em;
+    user-select: none;
+    /*letter-spacing: -0.1em;*/
+    width: max-content;
+}
+
+.candleText * {
+    margin: 0;
+}
+
+.candleChar {
+    position: relative;
+    color: transparent;
+    display: inline-block;
+    /*--candleColor: linear-gradient(*/
+    /*        rgba(255, 0, 0, 1) 10%,*/
+    /*        rgba(255, 154, 0, 1) 20%,*/
+    /*        rgba(208, 222, 33, 1) 30%,*/
+    /*        rgba(79, 220, 74, 1) 40%,*/
+    /*        rgba(63, 218, 216, 1) 50%,*/
+    /*        rgba(47, 201, 226, 1) 60%,*/
+    /*        rgba(28, 127, 238, 1) 70%,*/
+    /*        rgba(95, 21, 242, 1) 80%,*/
+    /*        rgba(186, 12, 248, 1) 90%*/
+    /*);*/
+    --candleColor: #ee1e02;
+}
+
+.candleText .frontCandleChar {
+    background: linear-gradient(#fff4, #fff4), var(--candleColor);
+    -webkit-background-clip: text;
+}
+
+.candleText .sideCandleChar {
+    position: absolute;
+    top: 0;
+    color: transparent;
+    background: linear-gradient(#0002, #0002), var(--candleColor);
+    -webkit-background-clip: text;
+}
+
+.flame {
+    --mainColor: rgba(139, 255, 251, 0.68);
+    --leftBackground: var(--mainColor);
+    --topBackground: var(--mainColor);
+    --rightBackground: var(--mainColor);
+    --bottomBackground: var(--mainColor);
+    --backBackground: var(--mainColor);
+    --frontBackground: var(--mainColor);
+    position: absolute;
+    bottom: calc(100%);
+    left: calc(50%);
+    --optionalTransform: translateX(0);
+    transform: var(--optionalTransform) translateZ(-10px);
+}
+
+.flame ._reusableBox__boxFace {
+    box-shadow: 0 0 5px var(--mainColor);
+}
+
+.flameTransformGroup {
+    transform-origin: 0 20px 0;
+    animation: waggle 2s ease-in-out infinite;
+    transform: rotateZ(-3deg);
+}
+
+@keyframes waggle {
+    0% {
+        transform: rotateZ(-3deg);
+    }
+
+    50% {
+        transform: rotateZ(3deg);
+    }
+}
+
+.flamePart1 {
+    --width: 16px;
+    --length: var(--width);
+    --height: 15px;
+}
+
+.flamePart2 {
+    --width: 12px;
+    --length: var(--width);
+    --height: 22px;
+    transform: translateY(-1px);
+}
+
+.flamePeak {
+    --width: 7px;
+    --length: var(--width);
+    --height: 23px;
+    transform: translateY(-5px);
+}

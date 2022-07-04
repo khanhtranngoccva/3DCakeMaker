@@ -1,0 +1,145 @@
+.berryTopping {
+    transform: translateY(-60px);
+}
+
+.cakeIcing {
+    /*display: none;*/
+}
+
+.raspberry {
+    transform: translateY(-14px);
+    --primaryColor: #e33779;
+    --darken: #00000022;
+    --extraDarken: #00000044;
+    --topBackground: var(--primaryColor);
+    --bottomBackground: var(--primaryColor);
+    --leftBackground: linear-gradient(var(--extraDarken), var(--extraDarken)), var(--primaryColor);
+    --rightBackground: linear-gradient(var(--extraDarken), var(--extraDarken)), var(--primaryColor);
+    --frontBackground: linear-gradient(var(--darken), var(--darken)), var(--primaryColor);
+    --backBackground: linear-gradient(var(--darken), var(--darken)), var(--primaryColor);
+    --bigDimension: 25px;
+    --smallDimension: 20px;
+    --nudgeOffset: 4px;
+}
+
+.raspberryBox1 {
+    --width: 20px;
+    --length: 30px;
+    --height: 20px;
+}
+
+.raspberryBox2 {
+    --width: 30px;
+    --length: 20px;
+    --height: 20px;
+}
+
+.raspberryBox3 {
+    --width: 20px;
+    --length: 20px;
+    --height: 30px;
+}
+
+.raspberry:nth-of-type(1) {
+    transform: translate3d(-150px, 0, 0);
+}
+
+.raspberry:nth-of-type(2) {
+    transform: translate3d(150px, 0, 0);
+}
+
+.raspberry:nth-of-type(3) {
+    transform: translate3d(0, 0, 150px);
+}
+
+.raspberry:nth-of-type(4) {
+    transform: translate3d(0, 0, -150px);
+}
+
+.raspberry:nth-of-type(5) {
+    transform: translate3d(-100px, 0, 100px);
+}
+
+.raspberry:nth-of-type(6) {
+    transform: translate3d(-100px, 0, -100px);
+}
+
+.raspberry:nth-of-type(7) {
+    transform: translate3d(100px, 0, 100px);
+}
+
+.raspberry:nth-of-type(8) {
+    transform: translate3d(100px, 0, -100px);
+}
+
+.blueberries {
+    transform: rotateY(22.5deg);
+}
+
+.blueberry {
+    --height: var(--width);
+    --length: var(--width);
+    --primaryColor: #2d3bd2;
+    --darken: #00000022;
+    --extraDarken: #00000044;
+    --topBackground: var(--primaryColor);
+    --bottomBackground: var(--primaryColor);
+    --leftBackground: linear-gradient(var(--extraDarken), var(--extraDarken)), var(--primaryColor);
+    --rightBackground: linear-gradient(var(--extraDarken), var(--extraDarken)), var(--primaryColor);
+    --frontBackground: linear-gradient(var(--darken), var(--darken)), var(--primaryColor);
+    --backBackground: linear-gradient(var(--darken), var(--darken)), var(--primaryColor);
+}
+
+.blueberryRotate {
+    transform: rotateY(-22.5deg);
+}
+
+.blueberryBox1 {
+    --width: 16px;
+    --length: 16px;
+    --height: 22px;
+}
+
+.blueberryBox2 {
+    --width: 16px;
+    --length: 22px;
+    --height: 16px;
+}
+
+.blueberryBox3 {
+    --width: 22px;
+    --length: 16px;
+    --height: 16px;
+}
+
+.blueberry:nth-of-type(1) {
+    transform: translate3d(-150px, 0, 0);
+}
+
+.blueberry:nth-of-type(2) {
+    transform: translate3d(150px, 0, 0);
+}
+
+.blueberry:nth-of-type(3) {
+    transform: translate3d(0, 0, 150px);
+}
+
+.blueberry:nth-of-type(4) {
+    transform: translate3d(0, 0, -150px);
+}
+
+.blueberry:nth-of-type(5) {
+    transform: translate3d(-100px, 0, 100px);
+}
+
+.blueberry:nth-of-type(6) {
+    transform: translate3d(-100px, 0, -100px);
+}
+
+.blueberry:nth-of-type(7) {
+    transform: translate3d(100px, 0, 100px);
+}
+
+.blueberry:nth-of-type(8) {
+    transform: translate3d(100px, 0, -100px);
+}

@@ -1,3 +1,7 @@
+body {
+    font-family: "Lato", system-ui, sans-serif;
+}
+
 .canvas {
     background: dodgerblue;
     perspective: 1000px;
@@ -11,6 +15,7 @@
 
 .cake {
     --cakeBaseHeight: 80px;
+    transform: translateY(50px);
 }
 
 .cakeBase {
@@ -158,3 +163,7 @@
     color: #e14646;
 }
 
+.finalizeEditCakeButton {
+    display: block;
+    width: 100%;
+}

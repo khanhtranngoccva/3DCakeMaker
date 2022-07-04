@@ -23,9 +23,12 @@ function applyCandleText(parent) {
         const frontTextElement = document.createElement("div");
         frontTextElement.innerText = char;
         frontTextElement.classList.add("frontCandleChar");
-        if ("108".includes(char)) {
-            frontTextElement.style.transform = "scaleX(1.4)";
+        if ("4".includes(char)) {
+            frontTextElement.style.transform = "scaleX(1.1)";
+        } else {
+            frontTextElement.style.transform = "scaleX(1.2)";
         }
+
         outerTextElement.append(frontTextElement);
 
         for (let i = 1; i < 20; i++) {
@@ -43,6 +46,11 @@ function applyCandleText(parent) {
             </div>
         </div>`
         outerTextElement.innerHTML += fire;
+        if ("4".includes(char)) {
+            outerTextElement.querySelector(".flame").style.setProperty("--optionalTransform", "translateX(0.05em)");
+        } else if ("6".includes(char)) {
+            outerTextElement.querySelector(".flame").style.setProperty("--optionalTransform", "translateX(0.05em)");
+        }
     }
 }
 
