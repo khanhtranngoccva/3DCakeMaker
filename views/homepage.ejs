@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/static/css/homepage.css">
+    <title>3D Cake Maker</title>
+</head>
+<body>
+<main class="hero">
+    <div class="description">
+        <h1>Generate a beautiful <span class="beautifyText">CSS 3D</span> birthday cake within seconds.
+        </h1>
+        <section>
+            <ul>
+                <li>
+                    <h3>Step 1: Create a cake here! After creating, remember your cake ID!</h3>
+                    <a href="/createCake">css3dcakemaker.herokuapp.com/createCake</a>
+                </li>
+                <li>
+                    <h3>Step 2: Type in your cake ID in this page and view your beautiful cake!</h3>
+                    <a href="/getCake">css3dcakemaker.herokuapp.com/getCake</a>
+                </li>
+                <li>
+                    <h3>Step 3: Do you want to edit your cake? Edit them here. Don't forget your ID!</h3>
+                    <a href="/editCake">css3dcakemaker.herokuapp.com/editCake/{your_cake_id}</a>
+                </li>
+            </ul>
+        </section>
+    </div>
+    <div class="imageWrapper">
+        <img src="/static/img/sampleCake.png" alt="Sample Cake!" class="sampleImage">
+    </div>
+</main>
+</body>
+</html>

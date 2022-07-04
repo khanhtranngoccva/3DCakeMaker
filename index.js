@@ -9,6 +9,11 @@ async function main() {
     const userDatabase = mongoClient.db("userData");
     const userCakes = userDatabase.collection("userCakes");
 
+    expressApp.get("/", async (req, res) => {
+        res.render(path.join(__dirname, "views", "homepage.ejs"));
+    });
+
+
     expressApp.get("/createCake", async (req, res) => {
        res.render(path.join(__dirname, "views", "cake.ejs"), {
            cakeData,
