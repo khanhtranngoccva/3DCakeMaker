@@ -1,5 +1,7 @@
 # 3DCakeMaker
-A full-stack web app that generates 3D CSS-only cakes (without assistance of modern rendering engines like ThreeJS) and store their data on the cloud.
+A full-stack MVP web app that generates beautiful 3D CSS-only cakes and store their data on the cloud.
+
+**Fun fact**: I created this to celebrate a friend's birthday!
 
 **Link to project:** https://css3dcakemaker.herokuapp.com/
 
@@ -10,31 +12,30 @@ A full-stack web app that generates 3D CSS-only cakes (without assistance of mod
 **Tech used:**
 <img src="https://img.shields.io/static/v1?label=|&message=HTML5&color=red&logo=html5&labelColor=white" alt="HTML5"/>
 <img src="https://img.shields.io/static/v1?label=|&message=CSS3&color=dodgerblue&logo=css3&labelColor=white&logoColor=dodgerblue" alt="CSS3"/>
-<img src="https://img.shields.io/static/v1?label=|&message=JAVASCRIPT&color=yellow&logo=javascript&labelColor=white&logoColor=yellow" alt="JavaScript"/>
-<img src="https://img.shields.io/static/v1?label=|&message=NODEJS&color=darkgreen&logo=nodedotjs&labelColor=white&logoColor=darkgreen" alt="NodeJS"/>
-<img src="https://img.shields.io/static/v1?label=|&message=JAVASCRIPT&color=yellow&logo=javascript&labelColor=white&logoColor=yellow" alt="ExpressJS"/>
-<img src="https://img.shields.io/static/v1?label=|&message=JAVASCRIPT&color=yellow&logo=javascript&labelColor=white&logoColor=yellow" alt="MongoDB"/>
-<img src="https://img.shields.io/static/v1?label=|&message=JAVASCRIPT&color=yellow&logo=javascript&labelColor=white&logoColor=yellow" alt="Webpack"/>
+<img src="https://img.shields.io/static/v1?label=|&message=JavaScript&color=yellow&logo=javascript&labelColor=white&logoColor=yellow" alt="JavaScript"/>
+<img src="https://img.shields.io/static/v1?label=|&message=NodeJS&color=darkgreen&logo=nodedotjs&labelColor=white&logoColor=darkgreen" alt="NodeJS"/>
+<img src="https://img.shields.io/static/v1?label=|&message=MongoDB&color=|&logo=mongodb&labelColor=white&logoColor=|" alt="ExpressJS"/>
+<img src="https://img.shields.io/static/v1?label=|&message=ExpressJS&color=black&logo=express&labelColor=white&logoColor=black" alt="MongoDB"/>
+<img src="https://img.shields.io/static/v1?label=|&message=Webpack&color=dodgerblue&logo=webpack&labelColor=white&logoColor=dodgerblue" alt="Webpack"/>
 
-Here's where you can go to town on how you actually built this thing. Write as much as you can here, it's totally fine if it's not too much just make sure you write *something*. If you don't have too much experience on your resume working on the front end that's totally fine. This is where you can really show off your passion and make up for that ten fold.
+* This app is made with the help of my homemade framework DimensionCSS. I used this to construct basic boxes for the base and icing of the cake, as well as toppings.
+* The cake's colors was stored in CSS custom properties, allow easy propagation to child elements when the cake is edited.
+* Each cake property like the color of the frosting has a default value, which is stored inside a backend script. It is used to set the default values for the cake generation form and serves as a fallback when the cake data has invalid values.
+* All toppings are generated at once, but only 1 is shown at a time.
+* The 3D candles are regenerated every time the user changes the recipient's age by stacking thin layers of identical text on top of each other.
+* Users' cake data is stored in MongoDB.
 
 ## Optimizations
-*(optional)*
-
-You don't have to include this section but interviewers *love* that you can not only deliver a final product that looks great but also functions efficiently. Did you write something then refactor it later and the result was 5x faster than the original implementation? Did you cache your assets? Things that you write in this section are **GREAT** to bring up in interviews and you can use this section as reference when studying for technical interviews!
+* When user changes the cake recipient's age, some 3D boxes are redrawn to regenerate the candle's flames. 
+However, the cake icing and base are not rendered again. 
+* I also used voxel art style to reduce the number of DOM elements (more than 500 DOM elements shown at once cause FPS to drop considerably).
 
 ## Lessons Learned:
+* Gained solid experience in ExpressJS, MongoDB, Webpack.
+* Learned the technique to generate real 3D text through the use of multiple text layers stacked on top of each other.
+* Reviewed advanced CSS techniques like CSS variables, CSS calculations, and 3D CSS transforms.
+* Reviewed advanced JS concepts like event delegation.
+* Practiced dynamic HTML generation with EJS templates.
 
-No matter what your experience level, being an engineer means continuously learning. Every time you build something you always have those *whoa this is awesome* or *fuck yeah I did it!* moments. This is where you should share those moments! Recruiters and interviewers love to see that you're self-aware and passionate about growing.
-
-## Examples:
-Take a look at these couple examples that I have in my own portfolio:
-
-**Palettable:** https://github.com/alecortega/palettable
-
-**Twitter Battle:** https://github.com/alecortega/twitter-battle
-
-**Patch Panel:** https://github.com/alecortega/patch-panel
-
-
-
+## Note:
+* This is an experimental app to showcase advanced CSS. Due to performance constraints of CSS rendering, this app is not meant for production use.
